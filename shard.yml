@@ -1,0 +1,17 @@
+name: crms
+version: 0.1.0
+
+authors:
+  - DanielcderX <danyalghlaby@gmail.com>
+
+targets:
+  crms:
+    main: src/crms.cr
+
+dependencies:
+  fancyline:
+    github: Papierkorb/fancyline
+    version: ~> 0.4.1
+
+crystal: 1.8.0-dev
+license: MIT
