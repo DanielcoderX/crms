@@ -1,6 +1,6 @@
 # crms
 
-Simple Linux shell written in Crystal Language called crms
+### Simple Linux shell written in `Crystal Language` called **crms**
 
 ## Installation
 
@@ -23,9 +23,12 @@ $ shards build --threads=$(nproc)
 ## Important Note!
  Here we don't use **CTRL-C** to clear currnet line buffer, instead we use **CTRL-U**
 
+### TODO
+- [ ] Replace CTRL-C action with clear current line buffer
+- [ ] Add more support for TAB completion
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/crms/fork>)
+1. Fork it (<https://github.com/danielcoderx/crms/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
