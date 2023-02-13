@@ -1,3 +1,4 @@
+require "file_utils"
 module Crms
     class Processor 
         def initialize(@input : String)
@@ -9,13 +10,20 @@ module Crms
         def runner(input)
             begin
                 if input.includes? "cd"
-                    Dir.cd(input.tr("cd ",""))
-                end
-                if input.includes? "exit"
+                    inputsp = input.split(" ")
+                    if inputsp.size == 1
+                        puts "--: line 1: #{input}: command not found"
+                    elsif inputsp[1].ends_with?("/") == false && inputsp[1] != ".."
+                        FileUtils.cd inputsp[1] + "/" 
+                    else
+                        FileUtils.cd inputsp[1]
+                    end
+                elsif input.includes? "exit"
                     Messages.new
                     exit(0)
+                else
+                    system(input)
                 end
-                system(input)
             rescue ex
                 print ex
             end
